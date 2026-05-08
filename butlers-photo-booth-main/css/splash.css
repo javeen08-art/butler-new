@@ -1,0 +1,105 @@
+/* ============================================================
+   Butler's Photobooth — splash entry page
+   Just centered logo + wordmark + tagline + CTA + socials.
+   No image tile grid. Plain white bg.
+   ============================================================ */
+
+:root {
+  --white:  #ffffff;
+  --cream:  #f7f7f7;
+  --beige:  #ebebeb;
+  --tan:    #c8c8c8;
+  --brown:  #1a1a1a;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body.splash-body {
+  font-family: var(--font-body);
+  color: var(--brown);
+  background: var(--white);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.splash {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  max-width: 560px;
+}
+
+.brand-logo {
+  width: clamp(110px, 16vw, 180px);
+  height: auto;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--brown);
+}
+
+.brand-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #6b6b6b;
+  margin: -8px 0 8px;
+  letter-spacing: 0.01em;
+}
+
+.brand-cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border: 1px solid var(--brown);
+  color: var(--brown);
+  transition: background 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+  margin-top: 8px;
+}
+.brand-cta:hover {
+  background: var(--brown);
+  color: var(--white);
+  letter-spacing: 0.36em;
+}
+
+.brand-social {
+  display: flex;
+  gap: 22px;
+  margin-top: 8px;
+}
+.brand-social a {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  color: var(--brown);
+  transition: opacity 0.25s ease;
+  opacity: 0.85;
+}
+.brand-social a:hover { opacity: 1; }
+.brand-social svg { width: 100%; height: 100%; }
