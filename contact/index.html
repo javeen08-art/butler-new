@@ -81,6 +81,8 @@
             <input type="hidden" name="_subject" value="New event inquiry — Butler's Photobooth">
             <!-- 'box' template: cleaner card-style HTML layout in the inbox vs basic table -->
             <input type="hidden" name="_template" value="box">
+            <!-- Explicit recipient to ensure the inquiry arrives in your inbox -->
+            <input type="hidden" name="_to" value="info@butlersbooth.ca">
             <!-- FormSubmit reCAPTCHA enabled (browser sees a quick "I'm not a robot" check after submit) -->
             <input type="hidden" name="_captcha" value="true">
             <!-- After submit, browser redirects here so the success banner shows -->
@@ -113,11 +115,20 @@ info@butlersbooth.ca">
                 <label>Location / Venue<input type="text" name="venue" required></label>
                 <label>Estimated Guest Count<input type="number" name="guests" min="1" required></label>
               </div>
-              <div class="form-checkbox__sub">
+              <div class="form-checkbox">
                 <label>What is Your Budget?</label>
-                <label class="checkbox"><input type="checkbox" name ="$1,500-$1,700" value="$1,500-$1,700" >$1,500-$1,700</label>
-                <label class="checkbox"><input type="checkbox" name ="$1,800-$2,000" value="$1,500-$1,700" >$1,800-$2,000</label>
-                <label class="checkbox"><input type="checkbox" name ="$2,100-$2,500" value="$1,500-$1,700" > $2,100-$2,500</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="budget" value="$1,500-$1,700">
+                  <span>$1,500-$1,700</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="budget" value="$1,800-$2,000">
+                  <span>$1,800-$2,000</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="budget" value="$2,100-$2,500">
+                  <span>$2,100-$2,500</span>
+                </label>
               </div>
             </fieldset>
 
