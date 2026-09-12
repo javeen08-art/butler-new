@@ -117,7 +117,27 @@ info@butlersbooth.ca">
               </div>
               <fieldset class="form-radio-group">
   <legend>What is Your Budget?</legend>
-  
+  <style>
+  /* Standard Fieldset Reset & Styling */
+  .budget-group {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+  }
+
+  /* Red border when user attempts submit without selecting an option */
+  .budget-group:has(input:user-invalid) {
+    border-color: #dc2626;
+    background-color: #fff5f5;
+  }
+
+  /* Optional: Show required asterisk next to title */
+  .budget-group legend::after {
+    content: " *";
+    color: #dc2626;
+  }
+</style>
   <label class="radio">
     <input type="radio" name="budget" value="$1,000-$1,500" required>
     <span>$1,000-$1,500</span>
