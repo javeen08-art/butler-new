@@ -115,21 +115,24 @@ info@butlersbooth.ca">
                 <label>Location / Venue<input type="text" name="venue" required></label>
                 <label>Estimated Guest Count<input type="number" name="guests" min="1" required></label>
               </div>
-              <div class="form-checkbox">
-                <label>What is Your Budget?</label>
-                <label class="checkbox">
-                  <input type="checkbox" name="budget" value="$1,500-$1,700">
-                  <span>$1,000-$1,500</span>
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox" name="budget" value="$1,800-$2,000">
-                  <span>$1,500-$2,000</span>
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox" name="budget" value="$2,100-$2,500">
-                  <span>$2,000-$2,500</span>
-                </label>
-              </div>
+              <fieldset class="form-radio-group">
+  <legend>What is Your Budget?</legend>
+  
+  <label class="radio">
+    <input type="radio" name="budget" value="$1,000-$1,500" required>
+    <span>$1,000-$1,500</span>
+  </label>
+  
+  <label class="radio">
+    <input type="radio" name="budget" value="$1,500-$2,000">
+    <span>$1,500-$2,000</span>
+  </label>
+  
+  <label class="radio">
+    <input type="radio" name="budget" value="$2,000-$2,500">
+    <span>$2,000-$2,500</span>
+  </label>
+</fieldset>
             </fieldset>
 
             <fieldset class="form-group">
@@ -141,7 +144,7 @@ info@butlersbooth.ca">
               <div class="form-checkbox">
                 <label class="checkbox">
                   <input type="checkbox" name="prints_needed" value="Yes">
-                  <span>Prints Needed? <em>(+$200 | 4×6 )</em></span>
+                  <span>Prints Needed? <em></em></span>
                 </label>
                 <!-- <div class="form-checkbox__sub">
                   <label class="checkbox-inline"><input type="checkbox" name="print_size_4x6" value="4×6"> 4×6</label>
