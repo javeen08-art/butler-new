@@ -800,6 +800,10 @@ body[data-gallery-open="true"] { overflow: hidden; }
   padding: 0;
   margin: 0 0 24px;
 }
+
+.form-radio-group {
+  font-family: var(--font-body);
+}
 .form-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
