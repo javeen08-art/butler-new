@@ -804,7 +804,7 @@ body[data-gallery-open="true"] { overflow: hidden; }
 .form-radio-group {
   font-family: var(--font-body);font-family: var(--font-body);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--muted);
