@@ -929,6 +929,9 @@ a.contact-meta__value:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .form-row { grid-template-columns: 1fr; }
   .form-checkbox__sub { padding-left: 0; flex-wrap: wrap; }
+  .form-radio-group{padding-left: 0; flex-wrap: wrap;
+
+  }
 }
 
 /* ---------- legacy .closing-cta (from EM-derived pages) — give it proper padding ---------- */
