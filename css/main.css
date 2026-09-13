@@ -930,6 +930,7 @@ a.contact-meta__value:hover { text-decoration: underline; }
   .form-row { grid-template-columns: 1fr; }
   .form-checkbox__sub { padding-left: 0; flex-wrap: wrap; }
   .form-radio-group {
+   display: flex !important;
     flex-direction: column !important; 
 
   }
