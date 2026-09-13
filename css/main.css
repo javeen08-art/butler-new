@@ -932,6 +932,7 @@ a.contact-meta__value:hover { text-decoration: underline; }
   .form-radio-group {
    display: flex !important;
     flex-direction: column !important; 
+    text-align: left;
 
   }
 }
