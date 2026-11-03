@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Services & Packages | Butler's Portrait Booth</title>
-  <meta name="description" content="Live Portrait Photo Booth, instant digital sharing, on-site prints, premium backdrops. Three packages: Butler’s Classic, Black Label, and White Glove.">
+  <title>Services &amp; Packages | Butler’s Portrait Booth</title>
+  <meta name="description" content="Portrait Booth and Video Guestbook for weddings, corporate events and celebrations across the GTA. Compare 2, 3 and 4 hour packages and send an inquiry.">
 
   <link rel="canonical" href="https://butlersbooth.ca/services/">
   <meta name="theme-color" content="#0a0a0a">
@@ -16,54 +16,125 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Butler&rsquo;s Photobooth">
+  <meta property="og:site_name" content="Butler’s Portrait Booth">
   <meta property="og:url" content="https://butlersbooth.ca/services/">
-  <meta property="og:title" content="Services & Packages | Butler’s Photobooth">
-  <meta property="og:description" content="Live Portrait Photo Booth, instant digital sharing, on-site prints, premium backdrops. Three packages: Butler’s Classic, Black Label, and White Glove.">
+  <meta property="og:title" content="Services &amp; Packages | Butler’s Portrait Booth">
+  <meta property="og:description" content="Portrait Booth and Video Guestbook for weddings, corporate events and celebrations across the GTA.">
   <meta property="og:image" content="https://butlersbooth.ca/assets/og/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Services & Packages | Butler’s Photobooth">
-  <meta name="twitter:description" content="Live Portrait Photo Booth, instant digital sharing, on-site prints, premium backdrops. Three packages: Butler’s Classic, Black Label, and White Glove.">
+  <meta name="twitter:title" content="Services &amp; Packages | Butler’s Portrait Booth">
+  <meta name="twitter:description" content="Portrait Booth and Video Guestbook for weddings, corporate events and celebrations across the GTA.">
   <meta name="twitter:image" content="https://butlersbooth.ca/assets/og/twitter-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css?v=11">
+  <link rel="stylesheet" href="../css/main.css?v=12">
+
+  <style>
+    /* Services page only. Built on the variables and patterns in main.css. */
+    .sv-head { font-family: var(--font-display); font-weight: 400; line-height: 1.02; letter-spacing: -0.015em; font-size: clamp(36px, 5.6vw, 80px); margin: 0 0 32px; }
+    .sv-head em { font-style: italic; }
+    .sv-sub { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 3vw, 40px); margin: 0 0 12px; letter-spacing: -0.005em; }
+    .sv-copy p { margin: 0 0 18px; max-width: 56ch; color: var(--muted); }
+    .sv-note { margin: 0 0 32px; color: var(--muted); font-size: 16px; }
+
+    /* Service selection */
+    .sv-choose { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .sv-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: clamp(32px, 4vw, 64px) clamp(0px, 2vw, 32px); transition: background 0.3s ease; }
+    .sv-choice + .sv-choice { border-left: 1px solid var(--rule); padding-left: clamp(24px, 4vw, 64px); }
+    .sv-choice:hover { background: var(--paper); }
+    .sv-choice:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+    .sv-choice h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 4.4vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.015em; }
+    .sv-choice p { margin: 0; color: var(--muted); max-width: 32ch; }
+
+    /* Intro + inclusions */
+    .sv-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+    .sv-list { border-top: 1px solid var(--rule); }
+    .sv-list li { padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+
+    /* Pricing rows */
+    .sv-pricing { margin-top: clamp(64px, 9vw, 120px); }
+    .price-list { border-top: 1px solid var(--rule); }
+    .price-row { display: grid; grid-template-columns: 1fr 2fr auto; gap: 40px; align-items: baseline; padding: 36px 0; border-bottom: 1px solid var(--rule); }
+    .price-row__label { font-weight: 500; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin: 0; }
+    .price-row__hours { font-family: var(--font-display); font-size: clamp(32px, 4vw, 56px); line-height: 1; margin: 0; letter-spacing: -0.015em; }
+    .price-row__price { font-family: var(--font-display); font-style: italic; font-size: clamp(28px, 3.4vw, 44px); margin: 0; }
+    .addon-row { display: grid; grid-template-columns: 3fr auto; gap: 8px 40px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+    .addon-row h4 { font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.4vw, 30px); margin: 0; }
+    .addon-row strong { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(22px, 2.4vw, 30px); }
+    .addon-row p { grid-column: 1 / -1; margin: 0; color: var(--muted); max-width: 60ch; font-size: 16px; }
+    .sv-addons { margin-top: 56px; border-top: 1px solid var(--rule); }
+
+    /* How it works (a real sequence, so it is numbered) */
+    .sv-steps { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); counter-reset: step; }
+    .sv-steps li { counter-increment: step; border-top: 1px solid var(--rule); padding-top: 24px; }
+    .sv-steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--muted); display: block; margin-bottom: 16px; }
+    .sv-steps h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); margin: 0 0 10px; }
+    .sv-steps p { margin: 0; color: var(--muted); font-size: 16px; }
+    .sv-attendant { margin: 32px 0 0; color: var(--muted); max-width: 60ch; }
+
+    /* Dark section: lift rules and secondary text so they read on ink */
+    .section--ink .sv-list, .section--ink .price-list, .section--ink .sv-steps li { border-color: rgba(255,255,255,0.22); }
+    .section--ink .sv-list li, .section--ink .price-row { border-color: rgba(255,255,255,0.22); }
+    .section--ink .sv-copy p, .section--ink .sv-note, .section--ink .sv-steps p, .section--ink .sv-steps li::before,
+    .section--ink .price-row__label, .section--ink .sv-attendant { color: var(--hint); }
+
+    /* Form additions (selects, hidden state) */
+    .butlers-form select { width: 100%; font-family: var(--font-display); font-size: 18px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 10px 0 12px; outline: none; border-radius: 0; }
+    .butlers-form select:focus { border-bottom-color: var(--ink); }
+    .form-row--2 { grid-template-columns: repeat(2, 1fr); }
+    .form-row + .form-row { margin-top: 28px; }
+    .butlers-form .is-hidden { display: none; }
+    .butlers-form .form-group > label + label { margin-top: 28px; }
+    .sv-honey { position: absolute; left: -9999px; }
+    .sv-form-intro { max-width: 52ch; color: var(--muted); margin: 0 0 56px; }
+    .section--ink .sv-form-intro { color: var(--hint); }
+
+    @media (max-width: 800px) {
+      .sv-choose, .sv-intro, .sv-steps, .form-row--2 { grid-template-columns: 1fr; }
+      .sv-choice + .sv-choice { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; }
+      .price-row { grid-template-columns: 1fr auto; gap: 8px 24px; }
+      .price-row__label { grid-column: 1 / -1; }
+      .addon-row { grid-template-columns: 1fr; }
+    }
+    [id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+    @media (prefers-reduced-motion: reduce) { .sv-choice { transition: none; } }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Portrait Photo Booth",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Butler\u2019s Photobooth",
-      "url": "https://butlersbooth.ca/",
-      "email": "info@butlersbooth.ca",
-      "areaServed": {"@type": "AdministrativeArea", "name": "Greater Toronto Area"}
-    },
+    "@type": "LocalBusiness",
+    "name": "Butler\u2019s Portrait Booth",
+    "url": "https://butlersbooth.ca/",
+    "email": "info@butlersbooth.ca",
     "areaServed": {"@type": "AdministrativeArea", "name": "Greater Toronto Area"},
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Butler\u2019s Photobooth Packages",
+      "name": "Butler\u2019s Portrait Booth Services",
       "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Butler\u2019s Classic",
-          "description": "2 hours of service. Studio lighting, premium backdrop, unlimited digital photos, instant sharing, custom watermark."
+          "price": "600", "priceCurrency": "CAD",
+          "itemOffered": {"@type": "Service", "name": "Portrait Booth, 2 hours", "description": "Photographer-led portrait booth with studio lighting, premium backdrop, posing guidance, unlimited digital portraits and instant sharing."}
         },
         {
           "@type": "Offer",
-          "name": "Black Label",
-          "description": "3 hours of service. Studio lighting, premium backdrop, unlimited digital photos, instant sharing, custom watermark."
+          "price": "750", "priceCurrency": "CAD",
+          "itemOffered": {"@type": "Service", "name": "Portrait Booth, 3 hours", "description": "Photographer-led portrait booth with studio lighting, premium backdrop, posing guidance, unlimited digital portraits and instant sharing."}
         },
         {
           "@type": "Offer",
-          "name": "White Glove",
-          "description": " 4 hours of service. Studio lighting, premium backdrop, unlimited digital photos, instant sharing, custom watermark."
+          "price": "900", "priceCurrency": "CAD",
+          "itemOffered": {"@type": "Service", "name": "Portrait Booth, 4 hours", "description": "Photographer-led portrait booth with studio lighting, premium backdrop, posing guidance, unlimited digital portraits and instant sharing."}
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Service", "name": "Video Guestbook", "description": "Interactive video guestbook station where guests record 30 to 60 second video messages, with an on-site attendant and delivery of all recordings after the event."}
         }
       ]
     }
@@ -74,9 +145,9 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__brand" href="../home/" aria-label="Butler&rsquo;s Photobooth, Home">
-        <img src="../assets/logo/butlers-logo-dark.png" alt="" class="js-logo-swap" data-light="../assets/logo/butlers-logo-dark.png" data-dark="../assets/logo/butlers-logo-dark.png">
-        <span class="site-header__wordmark">Butler's Portrait Booth</span>
+      <a class="site-header__brand" href="../home/" aria-label="Butler’s Portrait Booth, Home">
+        <img src="../assets/logo/butlers-logo-dark.png" alt="">
+        <span class="site-header__wordmark">Butler’s Portrait Booth</span>
       </a>
 
       <button class="site-header__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -97,81 +168,198 @@
 
   <main>
 
+    <!-- 1. MAIN SERVICES HEADER -->
     <section class="page-header">
       <div class="container">
         <p class="h-eyebrow">Services &amp; Packages</p>
-        <h1 class="h-display h-1">Studio-quality portraits, every <em>guest</em>, every event.</h1>
+        <h1 class="h-display h-1">Two ways to remember your <em>event.</em></h1>
+        <p class="lede">Choose a photographer-led Portrait Booth, a Video Guestbook, or both. Each comes in three lengths, so you can compare and book with confidence.</p>
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="section">
-      <div class="container fade-in" style="max-width: 880px;">
-        <p class="h-eyebrow">What We Offer</p>
-        <h2 class="h-display h-2">A full portrait experience.</h2>
-        <div class="services-list">
-          <div class="service-item">
-            <h3>Live Portrait Photo Booth</h3>
-            <p>A photographer-led photo booth experience with professional lighting, posing guidance, and high-quality portraits.</p>
+    <!-- 2. TWO SERVICE SELECTIONS -->
+    <section>
+      <div class="container">
+        <nav class="sv-choose" aria-label="Choose a service">
+          <a class="sv-choice" href="#portrait-booth">
+            <h2>Portrait Booth</h2>
+            <p>Studio-quality portraits of every guest, taken right at your event.</p>
+            <span class="link-arrow">View Portrait Booth</span>
+          </a>
+          <a class="sv-choice" href="#video-guestbook">
+            <h2>Video Guestbook</h2>
+            <p>Heartfelt video messages from your guests, yours to keep.</p>
+            <span class="link-arrow">View Video Guestbook</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3 + 4. PORTRAIT BOOTH -->
+    <section class="section" id="portrait-booth">
+      <div class="container">
+        <div class="sv-intro fade-in">
+          <div class="sv-copy">
+            <p class="h-eyebrow">Portrait Booth</p>
+            <h2 class="sv-head">A Studio Experience, Brought to Your Event.</h2>
+            <p>Our photographer-led Portrait Booth combines professional lighting, premium backdrops, and posing guidance to create beautiful, studio-quality portraits right at your event.</p>
+            <p>From weddings to corporate functions and private celebrations, we make every guest feel camera-ready.</p>
           </div>
-          <div class="service-item">
-            <h3>Instant Digital Sharing</h3>
-            <p>Guests can receive and share their photos digitally during the event.</p>
+          <div>
+            <h3 class="sv-sub">What&rsquo;s included</h3>
+            <p class="sv-note">Every Portrait Booth package includes:</p>
+            <ul class="sv-list">
+              <li>Professional photographer on-site</li>
+              <li>Professional studio lighting</li>
+              <li>Premium backdrop</li>
+              <li>Posing and portrait guidance</li>
+              <li>Unlimited digital portraits</li>
+              <li>Instant digital photo sharing</li>
+              <li>Custom watermark upon request on portraits</li>
+            </ul>
           </div>
-          <div class="service-item">
-            <h3>On-Site Photo Prints</h3>
-            <p>Optional 4&times;6 prints available for guests to take home as a keepsake.</p>
+        </div>
+
+        <div class="sv-pricing fade-in">
+          <h3 class="sv-sub">Portrait Booth packages</h3>
+          <p class="sv-note">All three packages include the same features. Only the duration and price change.</p>
+          <div class="price-list">
+            <div class="price-row"><p class="price-row__label">Package 1</p><p class="price-row__hours">2 Hours</p><p class="price-row__price">$600</p></div>
+            <div class="price-row"><p class="price-row__label">Package 2</p><p class="price-row__hours">3 Hours</p><p class="price-row__price">$750</p></div>
+            <div class="price-row"><p class="price-row__label">Package 3</p><p class="price-row__hours">4 Hours</p><p class="price-row__price">$900</p></div>
           </div>
-          <div class="service-item">
-            <h3>Unlimited Prints Add-On</h3>
-            <p>Upgrade your package with unlimited prints for the full photo booth experience.</p>
-          </div>
-          <div class="service-item">
-            <h3>Premium Backdrops</h3>
-            <p>Choose from clean, elegant backdrop options to match your event style.</p>
-          </div>
-          <div class="service-item">
-            <h3>Custom Backgrounds Upon Request</h3>
-            <p>Custom backgrounds can be arranged through a third-party vendor for a more personalized setup.</p>
+
+          <div class="sv-addons">
+            <div class="addon-row">
+              <h4>Unlimited 4&times;6 Photo Prints</h4><strong>$200</strong>
+              <p>Give your guests a physical keepsake with unlimited on-site 4&times;6 prints throughout your booked service.</p>
+            </div>
+            <div class="addon-row">
+              <h4>Custom Backgrounds</h4><strong>Upon request</strong>
+              <p>Custom backgrounds can be arranged through a third-party vendor to suit your event&rsquo;s theme and style.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== PACKAGES ===== -->
-    <section class="section section-dark">
-      <div class="container fade-in" style="max-width: 1100px;">
-        <div style="text-align:center; max-width: 600px; margin: 0 auto 56px;">
-          <p class="h-eyebrow">Packages</p>
-          <h2 class="h-display h-2">Three tiers, one experience.</h2>
+    <!-- 5 + 6. VIDEO GUESTBOOK -->
+    <section class="section section--ink" id="video-guestbook">
+      <div class="container">
+        <div class="sv-intro fade-in">
+          <div class="sv-copy">
+            <p class="h-eyebrow">Video Guestbook</p>
+            <h2 class="sv-head">More Than a Message. A Memory You Can Relive.</h2>
+            <p>Some memories deserve more than a photograph.</p>
+            <p>Our Video Guestbook station gives your guests the opportunity to leave heartfelt messages, share funny stories, offer advice, and express their love through personalized video recordings.</p>
+            <p>With a simple touch of the screen, guests can record a 30&ndash;60-second video message with both high quality audio and video.</p>
+            <p>After your event, you&rsquo;ll receive a collection of these special recordings to watch, share, and treasure for years to come.</p>
+            <p>Perfect for weddings, birthdays, anniversaries, corporate celebrations, and special occasions.</p>
+          </div>
+          <div>
+            <h3 class="sv-sub">What&rsquo;s included</h3>
+            <p class="sv-note">Every Video Guestbook package includes:</p>
+            <ul class="sv-list">
+              <li>Interactive premium Video Guestbook station</li>
+              <li>Video and audio recording</li>
+              <li>30&ndash;60-second guest video messages</li>
+              <li>Simple, guest-friendly recording experience</li>
+              <li>Dedicated on-site attendant</li>
+              <li>Set-up and tear down</li>
+              <li>Delivery of recorded videos to the client after the event</li>
+            </ul>
+          </div>
         </div>
-        <div class="packages-grid">
-          <article class="package">
-            <h3 class="package__name">Butlers Classic</h3>
-            <p class="package__hours">2 hours of service</p>
-            <p class="package__desc">Studio lighting, premium backdrop, unlimited digital photos, instant sharing, and a custom watermark.</p>
-          </article>
-          <article class="package">
-            <h3 class="package__name">Black Label</h3>
-            <p class="package__hours">3 hours of service</p>
-            <p class="package__desc">Studio lighting, premium backdrop, unlimited digital photos, instant sharing, and a custom watermark.</p>
-          </article>
-          <article class="package">
-            <h3 class="package__name">White Glove</h3>
-            <p class="package__hours">4 hours of service</p>
-            <p class="package__desc">Studio lighting, premium backdrop, unlimited digital photos, instant sharing, and a custom watermark.</p>
-          </article>
+
+        <div class="sv-pricing fade-in" style="margin-top: clamp(64px, 9vw, 120px);">
+          <h3 class="sv-sub">How it works</h3>
+          <ol class="sv-steps">
+            <li><h3>Walk up</h3><p>Guests approach our interactive Video Guestbook station.</p></li>
+            <li><h3>Tap &amp; record</h3><p>With a simple touch of the screen, guests record a 30&ndash;60-second personalized video message with audio.</p></li>
+            <li><h3>Relive the memories</h3><p>After the event, the client receives the collected video messages to enjoy and revisit.</p></li>
+          </ol>
         </div>
-        <p style="text-align:center; margin-top: 48px; font-size: 15px; line-height: 1.6;">Prints are available as an add-on option to your package of choice.</p>
+
+        <div class="sv-pricing fade-in">
+          <h3 class="sv-sub">Video Guestbook packages</h3>
+          <p class="sv-note">All three packages include the same features. Only the duration and price change.</p>
+          <div class="price-list">
+            <!-- Replace [TBC] with the final price when confirmed -->
+            <div class="price-row"><p class="price-row__label">Package 1</p><p class="price-row__hours">2 Hours</p><p class="price-row__price">$[TBC]</p></div>
+            <div class="price-row"><p class="price-row__label">Package 2</p><p class="price-row__hours">3 Hours</p><p class="price-row__price">$[TBC]</p></div>
+            <div class="price-row"><p class="price-row__label">Package 3</p><p class="price-row__hours">4 Hours</p><p class="price-row__price">$[TBC]</p></div>
+          </div>
+          <p class="sv-attendant">A live attendant will be present throughout the booked service to assist and ensure everything runs smoothly.</p>
+        </div>
       </div>
     </section>
 
-    <section class="closing-cta">
+    <!-- 7. FINAL BOOKING / CONTACT -->
+    <section class="section" id="inquire">
       <div class="container fade-in">
         <p class="h-eyebrow">Inquire</p>
-        <h2 class="h-display h-2">Get a quote for your event.</h2>
-        <p class="lede">Send a few details and we&rsquo;ll get back with availability and pricing.</p>
-        <a href="../contact/" class="btn btn-dark">Get In Touch</a>
+        <h2 class="sv-head" style="max-width: 16ch;">Let&rsquo;s Make Your Event Unforgettable.</h2>
+        <p class="sv-form-intro">Whether you&rsquo;re looking for professional portraits, heartfelt video messages, or both experiences, we&rsquo;re here to help you capture memories that last.</p>
+
+        <!-- Match the action, _next and hidden fields to the form on your Contact page -->
+        <form class="butlers-form" id="inquiry-form" action="https://formsubmit.co/info@butlersbooth.ca" method="POST">
+          <input type="hidden" name="_subject" value="New services inquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input class="sv-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <fieldset class="form-group">
+            <legend class="form-group__title">About you</legend>
+            <div class="form-row">
+              <label>Full name<input type="text" name="name" autocomplete="name" required></label>
+              <label>Email address<input type="email" name="email" autocomplete="email" required></label>
+              <label>Phone number<input type="tel" name="phone" autocomplete="tel"></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="form-group__title">Your event</legend>
+            <div class="form-row">
+              <label>Event type<input type="text" name="event_type" placeholder="Wedding, birthday, corporate" required></label>
+              <label>Event date<input type="date" name="event_date" required></label>
+              <label>Event location<input type="text" name="event_location" required></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="form-group__title">Your service</legend>
+            <div class="form-row">
+              <label>Service interested in
+                <select id="f-service" name="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option>Portrait Booth</option>
+                  <option>Video Guestbook</option>
+                  <option>Both</option>
+                </select>
+              </label>
+              <label>Preferred package duration
+                <select name="duration" required>
+                  <option value="" disabled selected>Select a duration</option>
+                  <option>2 Hours</option>
+                  <option>3 Hours</option>
+                  <option>4 Hours</option>
+                </select>
+              </label>
+              <label id="prints-field">Unlimited prints add-on (Portrait Booth only)
+                <select id="f-prints" name="prints_addon">
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="form-group__title">Anything else</legend>
+            <label>Additional event details<textarea name="details"></textarea></label>
+          </fieldset>
+
+          <button class="btn" type="submit">Send inquiry</button>
+        </form>
       </div>
     </section>
 
@@ -180,7 +368,7 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__brand">
-        <img src="../assets/logo/butlers-logo-dark.png" alt="Butler&rsquo;s Photobooth">
+        <img src="../assets/logo/butlers-logo-dark.png" alt="Butler’s Portrait Booth">
         <p class="site-footer__tagline">Service Behind the Lens.</p>
         <ul class="site-footer__social" aria-label="Social media">
           <li><a href="https://www.instagram.com/butlersphotobooth/" aria-label="Instagram" target="_blank" rel="noopener">
@@ -213,12 +401,28 @@
     </div>
 
     <div class="site-footer__bottom">
-      <span>© <span id="year"></span>Butler's Portrait Booth. All rights reserved.</span>
+      <span>© <span id="year"></span> Butler’s Portrait Booth. All rights reserved.</span>
       <p class="site-footer__credit">Find Us on <a href="https://plandaro.com" target="_blank" rel="noopener noreferrer">Plandaro</a></p>
     </div>
   </footer>
 
   <script src="../js/nav.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Show the prints add-on only when Portrait Booth is part of the inquiry.
+    (function () {
+      var service = document.getElementById("f-service");
+      var field = document.getElementById("prints-field");
+      var select = document.getElementById("f-prints");
+      function sync() {
+        var hide = service.value === "Video Guestbook";
+        field.classList.toggle("is-hidden", hide);
+        select.disabled = hide;
+      }
+      service.addEventListener("change", sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>
